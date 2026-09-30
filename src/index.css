@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 100% 99%;
+    --foreground: 150 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 26% 14%;
+
+    --primary: 123 40% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 53 55% 92%;
+    --secondary-foreground: 123 40% 20%;
+
+    --muted: 48 30% 95%;
+    --muted-foreground: 150 9% 42%;
+
+    --accent: 10 71% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 48 22% 88%;
+    --input: 48 22% 86%;
+    --ring: 123 40% 20%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 150 18% 8%;
+    --foreground: 48 30% 96%;
+
+    --card: 150 16% 11%;
+    --card-foreground: 48 30% 96%;
+
+    --popover: 150 16% 11%;
+    --popover-foreground: 48 30% 96%;
+
+    --primary: 123 40% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 13% 17%;
+    --secondary-foreground: 48 30% 96%;
+
+    --muted: 150 13% 17%;
+    --muted-foreground: 48 10% 68%;
+
+    --accent: 10 67% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 48 30% 96%;
+
+    --border: 150 12% 22%;
+    --input: 150 12% 22%;
+    --ring: 123 40% 40%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-carnauba text-white;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface-glass {
+    @apply border border-white/10 bg-white/10 backdrop-blur-xl;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-carnauba/10 bg-carnauba/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-carnauba;
+  }
+}
